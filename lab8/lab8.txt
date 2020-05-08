@@ -1,0 +1,10 @@
+Detection
+
+Apr 12 00:16:55 erive011 sshd[3726]: error: maximum authentication attempts exceeded for dummy-user from 127.0.0.1 port 36304 ssh2 [preauth]
+Apr 12 00:16:55 erive011 sshd[3726]: Disconnecting: Too many authentication failures [preauth]
+Apr 12 00:16:55 erive011 sshd[3734]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=localhost user=dummy-user
+Apri 12 00:16:55 erive011 sshd[3734]: PAM service(sshd) ignoring max retries; 6 > 3 
+
+To try and automate the detection of these types of attacks we can write a script that looks for a specific number of login attempts within a short period of time (like a second) and disable the connection to that ip (temporarily).  There are already systems in place that can do this as mentioned in lab like fail2ban.
+
+Mitigation 
